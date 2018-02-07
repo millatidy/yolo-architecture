@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.layers import LeakyReLU
 
 length =  448
@@ -37,3 +37,9 @@ model.add(Conv2D(filters=1024, kernel_size=(3,3), strides=(2,2), activation=Leak
 
 model.add(Conv2D(filters=1024, kernel_size=(3,3), activation=LeakyRelu))
 model.add(Conv2D(filters=1024, kernel_size=(3,3), activation=LeakyRelu))
+
+model.add(Flatten())
+model.add(Dense(units=(1024), activation=LeakyRelu))
+model.add(Dense(units=(1470), activation='relu'))
+
+print (model.summary())
