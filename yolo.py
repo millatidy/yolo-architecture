@@ -23,6 +23,7 @@ for i in range(4):
 	model.add(Conv2D(filters=256, kernel_size=(1,1), activation='relu'))
 	model.add(Conv2D(filters=512, kernel_size=(3,3), activation='relu'))
 model.add(Conv2D(filters=512, kernel_size=(3,3), activation='relu'))
+model.add(Conv2D(filters=1024, kernel_size=(3,3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
 
 for i in range(2):
